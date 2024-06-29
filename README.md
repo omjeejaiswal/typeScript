@@ -1,3 +1,5 @@
 #typeScript........
 
- tsc file convert javascript.
+ typeScript file convert javascript.
+
+ tsc filename.ts
