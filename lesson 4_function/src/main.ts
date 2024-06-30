@@ -74,3 +74,44 @@ logMsg(sumAll(undefined, 3, undefined))
 
 logMsg(sumAll(undefined, 3, 4))
 
+
+// Rest parameter 
+const total = (a:number, ...nums: number[]): number => {
+    return a + nums.reduce((prev, curr) => prev + curr)
+}
+
+logMsg(total(1,2,3,4))
+
+
+const createError = (errMsg: string): never => {
+    throw new Error(errMsg)
+}
+
+const infinite = () => {
+    let i: number = 1
+    while(true) {
+        i++
+        if(i>100) break
+    }
+}
+
+// custom type guard
+const isNumber = (value: any): boolean => {
+    return typeof value === 'number'
+        ?true: false
+}
+
+// use of the never type
+
+// const numberOrString = (value: number | string): string => {
+//     if(typeof value === 'string') return 'string'
+//     if(typeof value === 'number') return 'number'
+// }
+
+// solve the upper error
+
+const numberOrString = (value: number | string): string => {
+    if(typeof value === 'string') return 'string'
+    if(typeof value === 'number') return 'number'
+    return createError('this should never happen!')
+}
