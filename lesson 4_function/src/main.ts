@@ -38,5 +38,39 @@ let subtract = function(c: number, d:number):number {
 
 logMsg(subtract(2,3))
 
+type mathFunction = (a:number, b:number) => number
+// or 
 
+// interface mathFunction {
+//     (a:number, b:number): number
+// }
+
+let multiply: mathFunction = function(c,d) {
+    return c * d
+}
+logMsg(multiply(2,3))
+
+
+
+//optonal parameters
+const addAll = (a:number, b:number, c?:number):number => {
+    if(typeof c !== 'undefined') {
+        return a + b + c
+    }
+    return a + b
+}
+
+const sumAll = (a:number = 10, b:number, c:number = 2):number => {
+    return a + b + c
+}
+
+logMsg(addAll(2,3,2))
+
+logMsg(addAll(2,3))
+
+logMsg(sumAll(2,3))
+
+logMsg(sumAll(undefined, 3, undefined))
+
+logMsg(sumAll(undefined, 3, 4))
 
