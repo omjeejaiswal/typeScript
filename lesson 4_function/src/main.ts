@@ -10,3 +10,10 @@ type Guitarist = {
 }
 
 type UserId = stringOrNumber
+
+// Literal types
+let myName: 'Omjee'
+// myName = 'jaiswal'
+
+let userName : 'Omjee' | 'Jasiwal' | 'Amy'
+userName = 'Amy'
