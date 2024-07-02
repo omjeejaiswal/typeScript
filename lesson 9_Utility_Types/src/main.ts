@@ -127,6 +127,9 @@ const fetchUsers = async(): Promise<User[]> => {
 }
 
 
+type FetchUsersReturnType = Awaited<ReturnType<typeof fetchUsers>>
+
+fetchUsers().then(users => console.log(users))
 
 
 
