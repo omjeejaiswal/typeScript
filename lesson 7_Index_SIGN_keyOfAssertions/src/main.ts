@@ -13,7 +13,6 @@
 interface TransactionObj {
     readonly [index: string]: number
     Pizza: number,
-
     Books: number,
     Job: number
 }
