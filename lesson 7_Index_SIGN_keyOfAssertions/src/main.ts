@@ -85,7 +85,6 @@ logStudentKey(student, 'name')
 
 
 
-
 //////////////////////////////////
 // interface Incomes {
 //     [key: string]: number
