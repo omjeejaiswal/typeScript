@@ -1,5 +1,6 @@
 import listItems from "./Listitem"
 
+
 interface List {
     list: listItems[],
     load() : void,
