@@ -1,4 +1,4 @@
-import listItems from "./Listitem"
+import listItems from "./ListItem"
 
 
 interface List {
