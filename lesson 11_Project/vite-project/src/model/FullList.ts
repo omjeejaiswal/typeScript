@@ -1,12 +1,11 @@
-import Listitem from "./Listitem";
-
+import listItems from "./Listitem"
 
 interface List {
-    list: Listitem[],
+    list: listItems[],
     load() : void,
     save(): void,
     clearList(): void,
-    addItem(itemObj: Listitem): void,
+    addItem(itemObj: listItems): void,
     removeItem(id: string):void,
 }
 
@@ -14,20 +13,20 @@ export default class FullList implements List{
 
     static instance: FullList = new FullList()
 
-    private constructor(private _list: Listitem[] = [] ){}
+    private constructor(private _list: listItems[] = [] ){}
 
-    get list(): Listitem[] {
+    get list(): listItems[] {
         return this._list
     }
 
     load(): void {
         const storedList: string | null = localStorage.getItem("mylist")
         if(typeof storedList !== "string") return
-        
+
         const parsedList: {_id:string, _item: string, _checked: boolean} [] = JSON.parse(storedList)
 
         parsedList.forEach(itemObj => {
-            const newListItem = new Listitem(itemObj._id, itemObj._item, itemObj._checked)
+            const newListItem = new listItems(itemObj._id, itemObj._item, itemObj._checked)
             FullList.instance.addItem(newListItem)
         })
     }
@@ -41,7 +40,7 @@ export default class FullList implements List{
         this.save()
     }
 
-    addItem(itemObj: Listitem): void {
+    addItem(itemObj: listItems): void {
         this._list.push(itemObj)
         this.save()
     }
