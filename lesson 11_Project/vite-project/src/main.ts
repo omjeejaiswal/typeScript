@@ -10,6 +10,7 @@ const initApp =(): void => {
 
   const itemEntryForm = document.getElementById("itemEntryForm") as HTMLFormElement
   
+
   itemEntryForm.addEventListener("submit", (event: SubmitEvent): void => {
     event.preventDefault()
 
@@ -17,7 +18,15 @@ const initApp =(): void => {
     const newEntryText: string = input.value.trim()
     if(!newEntryText.length) return 
 
-    const itemId:
+    const itemId: number = fullList.list.length
+      ? parseInt(fullList.list[fullList.list.length - 1].id) + 1
+      : 1
+
+    const newItem = new listItems(itemId.toString(), newEntryText)
+
+    fullList.addItem(newItem)
+
+    templates.render(fullList)
 
   })
   const clearItems = document.getElementById("clearItemsButton") as HTMLButtonElement
