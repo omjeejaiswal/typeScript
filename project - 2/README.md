@@ -13,8 +13,3 @@ next step: npm install or npm i
 
 
 
-project screenShot
-
-screen shot1: (src/assets/1.JPG)
-screen shot 2: 
-screenShot 3:
